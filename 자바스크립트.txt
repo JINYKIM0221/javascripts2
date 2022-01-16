@@ -1,0 +1,88 @@
+html에서 css와 js연결
+link:css를 쓰면된다(head부분에)
+
+script src=".js"를 쓰면된다(body부분에)
+
+const a = 5;
+const A = "bbb";
+스페이스를 사용할 수없어
+
+변수를 지정해주는 함수
+
+console.log(a);
+a를 나타나게 해주는 함수
+
+//what is the diffence between "const" and "let"?
+
+//"const"는 constant라는 뜻이고 값이 바뀔 수없다.
+//const는 절대 다른 값으로 업데이트 할 수 없다.
+//ex)const a = 7;
+//...
+//const a = 8;
+//console.long(a + b); : 오류가 난다
+//let은 다른 값으로 변경 가능하다.
+
+
+boolean : True and False
+true : 1
+false : 0
+
+
+
+2022/01/13
+3.1
+js와 html을 연결하는 법을 배웠다
+특히 JS안의 document라는 것은 getElementById,className등
+HTML의 요소를 가져 올 수 있다
+예를들어,
+document.getElementById("title")을 JS 에서 썼다면
+해당 html의 요소를 가져 올 수 있다는 것이다
+그래서
+JS에서 const title = document.getElementById("title");
+를 만들어서  title이라는 변수를 정해준다음
+title.innertext = ""를 사용하면 html id=title의 text를 바꿀 수 있다
+
+3.2
+tag = anchor,div,section,button등을 이야기
+만약 hello라는 클래스 안에 있는 h1태그를 하나만 가져오고 싶다면
+querySelector(".hello h1")을 쓰면 된다.(.hello = class = "hello)
+이다.(#hello = "id = hello")
+querySelector는 해당하는 요소 중 가장 첫번째 것만가져온다
+querySelectorAll은 해당하는 모든 요소를 가져온다
+querySelectorAll을 쓰면 innerText못쓴다
+
+
+3.3
+addEventListener("click", 어떤 function):
+click하면 어떤 function이 작동하길 원한다
+JS가 대신 실행 시켜주길 바라는 것
+
+3.4
+event를 알아보고 싶다면 console.dir(해당 네임)치고
+on""이 붙은 것을 보면 된다
+ex)onclick,onchange
+
+
+4-1 Log In Section
+input : 사용자가 입력할 수 있는 곳
+placeholder : 입력하는 곳에 있는 텍스트
+button : 버튼
+
+*input안의 유효성 검사를 하기 위해서는
+ex)<input required maxlenght="15 type="text",,,/>
+input은 form안에 있어야한다
+ex)<form id = "">
+       <input>
+엔터를 누를 때마다 form이 submit된다 - 문제점 페이지는 계속 새로고침됨
+submit과 클릭의 차이점
+submit : enter or click했을때 발생
+click : 클릭했을때만 발생
+
+브라우저는 엔터를 누를 때 새로고침을 하는 기본동작한다
+어떻게 막나?
+preventDefault()라는 함수를 호출한다
+function onloginsubmit(event){
+    event.prevenDefault();
+    console.log(logininput.value);
+이런식으로 쓰는 이유는 event라는 변수를 반들어 prevenDefault를 담기위한 통으로 사용
+
