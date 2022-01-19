@@ -80,9 +80,11 @@ click : 클릭했을때만 발생
 
 브라우저는 엔터를 누를 때 새로고침을 하는 기본동작한다
 어떻게 막나?
-preventDefault()라는 함수를 호출한다
-function onloginsubmit(event){
-    event.prevenDefault();
-    console.log(logininput.value);
-이런식으로 쓰는 이유는 event라는 변수를 반들어 prevenDefault를 담기위한 통으로 사용
+preventDefault()라는 함수 호출
+
+4-5
+유저정보를 저장하는 방법
+localStorage.을 사용하면 됨
+ex) localStorage.setItem("key",value)
+
 
